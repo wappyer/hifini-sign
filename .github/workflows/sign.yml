@@ -23,5 +23,5 @@ jobs:
 
     - name: HIFINI 自动签到
       env:
-        token: ${{ secrets.TOKEN }}
+        token: ${{ secrets.token }}
       run: go run main.go
