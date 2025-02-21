@@ -23,5 +23,5 @@ jobs:
 
     - name: HIFINI 自动签到
       env:
-        COOKIE: ${{ secrets.TOKEN }}
+        token: ${{ secrets.TOKEN }}
       run: go run main.go
