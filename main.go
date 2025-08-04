@@ -11,12 +11,12 @@ import (
 	"strings"
 )
 
-const UrlIndex = "https://www.hifini.com/"
-const UrlSignIn = "https://www.hifini.com/sg_sign.htm"
+const UrlIndex = "https://www.hifiti.com/"
+const UrlSignIn = "https://www.hifiti.com/user-login.htm"
 
 func main() {
 	var token = ""
-	flag.StringVar(&token, "token", "", "bbs_token")
+	flag.StringVar(&token, "token", "", "登录后拿cookie中「bbs_token」的值")
 	flag.Parse()
 	if token == "" {
 		token = os.Getenv("token")
@@ -75,5 +75,7 @@ func SignIn(token, sign string) {
 	}
 	defer resp.Body.Close()
 	log.Println("[SignIn]签到请求成功")
+	respBodyByte, _ := io.ReadAll(resp.Body)
+	log.Printf("[SignIn]签到请求返回内容：%s\n", respBodyByte)
 	return
 }
