@@ -12,7 +12,7 @@ import (
 )
 
 const UrlIndex = "https://www.hifiti.com/"
-const UrlSignIn = "https://www.hifiti.com/user-login.htm"
+const UrlSignIn = "https://www.hifiti.com/sg_sign.htm"
 
 func main() {
 	var token = ""
